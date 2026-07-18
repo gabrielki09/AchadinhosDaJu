@@ -80,9 +80,9 @@
             align: 'center',
         },
         {
-            name: 'price',
+            name: 'sale_value',
             label: 'Preço',
-            field: 'price',
+            field: 'sale_value',
             align: 'center',
             format(val: number) {
                 return `R$ ${val.toFixed(2).toString().replace('.', ',')}`
@@ -209,6 +209,8 @@
         if(!res.success) return;
 
         const data: ProductContract[] = res.data;
+
+        console.log(data);
 
         itensData.value = data.map(p => ({
             id: p.id,
